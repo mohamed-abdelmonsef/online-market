@@ -5,11 +5,12 @@ import Login from "./components/login";
 
 function App() {
   return (
-        <Router>
-          <Route path='/' component={Home} exact/>
-          <Route path='/register' component={Register} exact/>
-          <Route path='/Login' component={Login} exact/>
-        </Router>
+    <Router>
+      <Route path='/' component={Home} exact />
+      <Route path='/register' component={Register} exact />
+      <Route path='/Login' component={Login} exact />
+      <Route path='/Dashboard' component={Login} exact />
+    </Router>
   );
 }
 

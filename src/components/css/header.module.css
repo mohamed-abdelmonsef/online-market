@@ -1,4 +1,10 @@
-.headerrr {
-    background-color: rgb(0, 183, 255);
-    padding: 66px;
+.headerrr{
+    background-color: #38578C;
+    color: white !important;
 }
+a{
+ color: white;
+ font-family: Comic Sans MS, Comic Sans, cursive
+}
+
+

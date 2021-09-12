@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/components/css/style.css'
+import 'bootstrap/dist/js/bootstrap'
+import 'font-awesome/css/font-awesome.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
 import reportWebVitals from './reportWebVitals';
 
