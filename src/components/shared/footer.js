@@ -56,7 +56,7 @@ export default class Footer extends React.Component {
                         </div>
                         <div className="row mb-3" >
                             <div className="col">
-                                <p>Brilliant is an international online market
+                                <p className="lead">Brilliant is an international online market
                                     for clothes trading for both genders with best prices available at market </p>
                             </div>
                             <div className="col">

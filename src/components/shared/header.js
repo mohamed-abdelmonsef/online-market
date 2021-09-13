@@ -1,19 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import {BiCart} from  "react-icons/bi"
+import {FaCrown} from "react-icons/fa"
 
 export default class Header extends React.Component {
+
+
     render() {
         return (
             <section>
                 <div>
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
-                            <a class="navbar-brand me-5" href="#"><span>B</span>rilliant</a>
+                            <Link class="navbar-brand me-5" to="/"><span ><FaCrown className="Logo fa-spin"/><span className="Logo2"><i>B</i>rilliant</span></span></Link>
                             <form class="d-flex ms-auto">
                                 <div class="input-group">
-                                    <input name="search" type="text" id="searchTxt" class="form-control" placeholder="Search .." aria-label="Recipient's username" aria-describedby="button-addon2" />
-                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                                    <input type="text" class="form-control" placeholder="Search .." aria-label="Recipient's username" aria-describedby="button-addon2" />
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
                             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +27,11 @@ export default class Header extends React.Component {
                                     <li class="nav-item">
                                         <Link to="/Login">
                                             <button class="btn btn-secondary ">Sign In</button>
+
+                                        </Link>&nbsp;
+                                        <Link to="/cart">
+                                            <button class="btn btn-secondary "><BiCart/></button>
+
                                         </Link>
                                     </li>
                                 </ul>

@@ -20,12 +20,27 @@
     color: white;
 }
 .navbar-light .navbar-brand >span{
-    color:red;
-    padding: 1px;
-    font-weight: bold;
+  color:white;
+  padding: 1px;
+  font-weight: bold;
+  position: relative;
+  font-size: 40px;
+  font-style: oblique;
 }
 .navbar-light .navbar-brand:hover{
    padding: 7px;
+}
+
+.Logo{
+  color: #a38b4f;
+  transform: scale(.9);
+  position: absolute;
+  top:-20px;
+  right: 115px;
+
+}
+.btn.btn-secondary{
+  background-color: #a38b4f;
 }
 /* End of header */
 
@@ -83,6 +98,11 @@
 .content {
     padding: 20px;
   }
+
+  @media (max-width: 575.98px) {  .custom-class {
+    margin-left:60px;
+  }}
+  
   
   .header {
     padding: 10px;
@@ -173,6 +193,7 @@
   }
   .loginbtn{
     /* width: 350px; */
+    width: 300px;
     color: white !important;
     background-color: #304c7c !important;
     border-color: rgb(67, 132, 134);
@@ -198,6 +219,15 @@
   .header {
       color: white;
   }
+
+
+  /* Start of Product */
+
+  #buynow{
+    background-color: #38578C;
+  }
+
+  /* End of Product */
 /* contact */
 .contact-h{
   margin-top: 20px;
@@ -218,6 +248,45 @@
     font-weight: bold;
     font-size: 30px;
 } */
+
+/* Start of cart */
+.myimg{
+  width: 20%;
+}
+.product-item{
+  display: flex; 
+}
+.shopping-cart-footer>.column:last-child {
+  text-align: right
+}
+
+.shopping-cart-footer>.column:last-child .btn {
+  margin-right: 0;
+  margin-left: 15px
+}
+
+.coupon-form .form-control{
+  width: 20%;
+  display: inline-block;
+  
+}
+.myicon{
+  color: red;
+  transform: scale(1.5);
+}
+
+/* End of cart */
+
+
+
+/* Start of slider */
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  
+}
+/* End of slider */
+
 
 
 

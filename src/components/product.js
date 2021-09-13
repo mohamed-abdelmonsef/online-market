@@ -33,7 +33,7 @@ export default class Product extends React.Component {
                                 <img src={firstd} type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></img>
                             </li> */}
                         </div>
-                        <div className="offset-md-2 col-5">
+                        <div className=" col-xs-12 col-lg-5">
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner mb-3">
                                     <div class="carousel-item active">
@@ -57,7 +57,7 @@ export default class Product extends React.Component {
                             </div>
                         </div>
 
-                        <div className="col">
+                        <div className="col-xs-12 col-lg-5">
                             <h5>Fantasy T-shirt</h5>
                             <p class="mb-2 text-muted text-uppercase small">Shirts</p>
                             <ul class="rating">

@@ -2,39 +2,36 @@ import React from "react";
 import Header from "./shared/header";
 import Slider from "./shared/slider";
 import Footer from "./shared/footer";
-import firsts from '../components/img/s1.jpg'
-import seconds from '../components/img/s2.jpg'
-import { Link } from "react-router-dom";
+import first from '../components/img/home4.webp'
+import second from '../components/img/home7.webp'
+import third from '../components/img/home3.webp'
+import fourth from '../components/img/home1.webp'
+import fifth from '../components/img/home8.webp'
+import sixth from '../components/img/home6.webp'
+
+
+
 //import classes from "./css/home.module.css";
 
 export default class Home extends React.Component {
+
+
     render() {
         return (
             <div>
                 <Header />
                 <Slider />
+
                 <section class="home" style={{
                     backgroundColor: 'whitesmoke'
                 }}>
                     <div className="container">
-                        <div className="row mb-3">
-                            <div className="col-xs-12 col-sm-12 col-md-4">
+                        <div className="row">
+                            <div className="col">
                                 <div class="card w-75" style={{
-                                    width: "18rem"
+                                    width: "18rem;"
                                 }}>
-                                    <img src={firsts} class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title e">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <Link to="/product" class="btn btn-primary">Go somewhere</Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xs-12 col-sm-12 col-md-4">
-                                <div class="card w-75" style={{
-                                    width: "18rem"
-                                }}>
-                                    <img src={firsts} class="card-img-top" alt="..." />
+                                    <img src={first} class="card-img-top" alt="..." />
                                     <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -42,11 +39,23 @@ export default class Home extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xs-12 col-sm-12 col-md-4">
+                            <div className="col">
                                 <div class="card w-75" style={{
-                                    width: "18rem"
+                                    width: "18rem;"
                                 }}>
-                                    <img src={firsts} class="card-img-top" alt="..." />
+                                    <img src={second} class="card-img-top" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col">
+                                <div class="card w-75" style={{
+                                    width: "18rem;"
+                                }}>
+                                    <img src={third} class="card-img-top" alt="..." />
                                     <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -55,12 +64,12 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="row mb-2">
-                            <div className="col-xs-12 col-sm-12 col-md-4">
+                        <div className="row">
+                            <div className="col">
                                 <div class="card w-75" style={{
-                                    width: "18rem"
+                                    width: "18rem;"
                                 }}>
-                                    <img src={seconds} class="card-img-top" alt="..." />
+                                    <img src={fourth} class="card-img-top" alt="..." />
                                     <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -68,11 +77,11 @@ export default class Home extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xs-12 col-sm-12 col-md-4">
+                            <div className="col">
                                 <div class="card w-75" style={{
-                                    width: "18rem"
+                                    width: "18rem;"
                                 }}>
-                                    <img src={seconds} class="card-img-top" alt="..." />
+                                    <img src={fifth} class="card-img-top" alt="..." />
                                     <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -80,11 +89,11 @@ export default class Home extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xs-12 col-sm-12 col-md-4">
+                            <div className="col">
                                 <div class="card w-75" style={{
-                                    width: "18rem"
+                                    width: "18rem;"
                                 }}>
-                                    <img src={seconds} class="card-img-top" alt="..." />
+                                    <img src={sixth} class="card-img-top" alt="..." />
                                     <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

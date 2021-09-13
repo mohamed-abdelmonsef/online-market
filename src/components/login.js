@@ -54,9 +54,15 @@ export default class Login extends React.Component {
                                     New to our site?
                                 </span>
                             </div><br />
-                            <Link to="/register">
-                                <button type="button" class="btn btn-primary" id="btn" >Create your account</button>
-                            </Link>
+                            <div className="row">
+                                <div className="col custom-class">
+                                    <Link to="/register">
+                                        <button type="button" class="btn btn-primary" id="btn" >Create your account</button>
+                                    </Link>
+                                </div>
+
+
+                            </div>
                         </section>
                     </section>
                 </div>
