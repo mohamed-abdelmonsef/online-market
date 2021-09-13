@@ -1,9 +1,7 @@
 import React from "react";
-//import classes from './css/login.module.css'
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Footer from "./shared/footer";
-//import Header from "./shared/header";
 
 export default class Login extends React.Component {
 
@@ -44,7 +42,9 @@ export default class Login extends React.Component {
                                     <input type="checkbox" class="form-check-input" />
                                     <label class="form-check-label" >Keep me logged in</label>
                                 </div>
-                                <button type="submit" class="btn loginbtn">Continue</button>
+                                <div class="row justify-content-center">
+                                    <button type="submit" class="btn loginbtn">Continue</button>
+                                </div>
                                 <div class="form-text">By signing in, you agree to our website's
                                     <font color='#46b5e8'> Condtions of Use</font> and <font color='#46b5e8'> Privacy Notice.</font></div>
                                 <div className="help">  <BsFillCaretRightFill className='icon' /><font color='#46b5e8' >Need help?</font></div>
@@ -54,7 +54,9 @@ export default class Login extends React.Component {
                                     New to our site?
                                 </span>
                             </div><br />
-                            <button type="button" class="btn btn-primary" id="btn" >Create your account</button>
+                            <Link to="/register">
+                                <button type="button" class="btn btn-primary" id="btn" >Create your account</button>
+                            </Link>
                         </section>
                     </section>
                 </div>

@@ -171,16 +171,16 @@
   .page{
       margin-bottom: 15px;
   }
-   .loginbtn{
-    width: 300px;
-    color: white;
-    background-color: #38578C;
+  .loginbtn{
+    /* width: 350px; */
+    color: white !important;
+    background-color: #304c7c !important;
     border-color: rgb(67, 132, 134);
     border-width: 2px;
   }
   .loginbtn:hover{
     background-color: rgb(53, 100, 102);
-    
+
   }
   .header .navbar-brand {
     color:white;
@@ -198,32 +198,20 @@
   .header {
       color: white;
   }
+/* contact */
+.contact-h{
+  margin-top: 20px;
+  color: #38578C;
+  font-size: 70px;
+  font-weight: 900;
+  line-height: 1;
+  padding: 13px 0;
+}
+.contact-header{
+  color:#38578C ;
+}
 
 /* End of Login */
-
-
-
-
-
-/* Start of product */
-
-/* .carousel {
-  width:450px;
-  height:360px;
-} */
-.carousel-inner > .carousel-item > img{
-  width:450px;
-  height:500px;
-}
-
-#buynow{
-  background-color: #38578C;
-}
-/* End of product */
-
-
-
-
 /* .col span{
     color: red;
     font-family:Comic Sans MS, Comic Sans, cursive ;
