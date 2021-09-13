@@ -1,12 +1,9 @@
 import React from "react";
-import './css/style.css'
+export default class Cart extends React.Component {
 
 
-export default class Cart extends React.Component{
-
-
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 CArt
             </div>
