@@ -12,7 +12,7 @@ export default class Header extends React.Component {
                 <div>
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
-                            <Link class="navbar-brand me-5" to="/"><span ><FaCrown className="Logo fa-spin"/><span className="Logo2"><i>B</i>rilliant</span></span></Link>
+                            <Link class="navbar-brand me-5" to="/"><span ><FaCrown className="Logo fa-spin"/><span className="Logo2"><i style={{color:'whitesmoke'}}>B</i><b style={{color:'#f5f50c'}}>rilliant</b></span></span></Link>
                             <form class="d-flex ms-auto">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search .." aria-label="Recipient's username" aria-describedby="button-addon2" />
@@ -30,7 +30,7 @@ export default class Header extends React.Component {
 
                                         </Link>&nbsp;
                                         <Link to="/cart">
-                                            <button class="btn btn-secondary "><BiCart/></button>
+                                            <button class="btn btn-secondary "><i>Cart </i><BiCart/></button>
 
                                         </Link>
                                     </li>

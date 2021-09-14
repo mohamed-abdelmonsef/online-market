@@ -1,29 +1,39 @@
+import { detectOverflow } from "@popperjs/core";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import React from "react";
 import Header from "./shared/header";
-import Slider from "./shared/slider";
 import Footer from "./shared/footer";
-import first from '../components/img/home4.webp'
-import second from '../components/img/home7.webp'
-import third from '../components/img/home3.webp'
-import fourth from '../components/img/home1.webp'
-import fifth from '../components/img/home8.webp'
-import sixth from '../components/img/home6.webp'
+import first from './img/home4.webp'
+import second from './img/home7.webp'
+import third from './img/home3.webp'
+import fourth from './img/home1.webp'
+import fifth from './img/home8.webp'
+import sixth from './img/home6.webp'
 
-
-
-//import classes from "./css/home.module.css";
-
-export default class Home extends React.Component {
-
-
+export default class Gallery extends React.Component {
     render() {
         return (
             <div>
                 <Header />
-                <Slider />
-
+                <section>
+                    <div className="gallery-header">
+                        <ul class="nav nav-pills nav-fill">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Men</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Women</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Kids</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
                 <section class="home" style={{
-                    backgroundColor: 'whitesmoke'
+                    backgroundColor: 'whitesmoke',
+                    padding: '60px'
                 }}>
                     <div className="container">
                         <div className="row">
@@ -103,10 +113,8 @@ export default class Home extends React.Component {
                         </div>
                     </div>
                 </section>
-
                 <Footer />
             </div>
-
         )
     }
 }

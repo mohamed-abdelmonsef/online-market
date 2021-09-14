@@ -2,6 +2,7 @@ import React from "react";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Footer from "./shared/footer";
+import { FaCrown } from "react-icons/fa"
 
 export default class Login extends React.Component {
 
@@ -11,24 +12,27 @@ export default class Login extends React.Component {
 
             <section className="navSec">
                 <div className="page">
-                    <div className="header">
-                        {/* <NavLink exact activeClassName="active" to="/">Home</NavLink>
-                        <NavLink activeClassName="active" to="/Login">Login</NavLink>
-                        <NavLink activeClassName="active" to="/Dashboard">Dashboard</NavLink> */}
-
-                        <nav aria-label="breadcrumb" className="mt-2">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><Link to="/">Home</Link></li>
-                                <li class="breadcrumb-item"><Link to="/Dashboard">Dashboard</Link></li>
-                                <li class="breadcrumb-item active" aria-current="page">Login</li>
-                            </ol>
+                    <section>
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid">
+                                <Link class="navbar-brand me-5" to="/"><span ><FaCrown className="Logo fa-spin" /><span className="Logo2"><i style={{ color: 'whitesmoke' }}>B</i><b style={{ color: '#f5f50c' }}>rilliant</b></span></span></Link>
+                                <form class="d-flex ms-auto">
+                                    <div class="input-group">
+                                        <Link to="/">
+                                            <button class="btn btn-secondary "> Home</button>
+                                        </Link>&nbsp;
+                                    </div>
+                                </form>
+                                <button class="navbar-toggler justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
                         </nav>
-                        <a class="navbar-brand me-5" href="#"><span>B</span>rilliant</a>
-                    </div>
+                    </section>
                 </div>
                 <div className="container-fluid mb-5 mt-5">
                     <section className="row justify-content-center">
-                        <section className="col-12 col-sm-6 col-md-3">
+                        <section className="col-12 col-sm-6 col-md-6 col-lg-3">
                             <form className="form">
                                 <div class="mb-3">
                                     <label class="form-label">Email address</label>
@@ -55,13 +59,11 @@ export default class Login extends React.Component {
                                 </span>
                             </div><br />
                             <div className="row">
-                                <div className="col custom-class">
+                                <div className="col-12">
                                     <Link to="/register">
-                                        <button type="button" class="btn btn-primary" id="btn" >Create your account</button>
+                                        <button type="button" class="btn btn-primary w-100" id="btn" >Create your account</button>
                                     </Link>
                                 </div>
-
-
                             </div>
                         </section>
                     </section>

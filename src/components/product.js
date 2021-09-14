@@ -4,6 +4,7 @@ import secondd from '../components/img/d2.jpg'
 import thirdd from '../components/img/d3.jpg'
 import Footer from "./shared/footer";
 import { Link } from "react-router-dom";
+import Header from "./shared/header";
 
 
 export default class Product extends React.Component {
@@ -12,20 +13,9 @@ export default class Product extends React.Component {
     render() {
         return (
             <section className="productDetails">
-                <div className="page">
-                    <div className="header">
-                        <nav aria-label="breadcrumb" className="mt-2">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><Link to="/">Home</Link></li>
-                                <li class="breadcrumb-item"><Link to="/Dashboard">Dashboard</Link></li>
-                                <li class="breadcrumb-item active" aria-current="page">Login</li>
-                            </ol>
-                        </nav>
-                        <a class="navbar-brand me-5" href="#"><span>B</span>rilliant</a>
-                    </div>
-                </div>
+                <Header />
                 <div className="container">
-                    <div className="row">
+                    <div className="row mb-5">
                         <div className="">
                             {/* <li class="carousel-indicators bg-dark">
                                 <img src={firstd} type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></img>

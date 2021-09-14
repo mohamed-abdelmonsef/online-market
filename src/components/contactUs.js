@@ -24,11 +24,11 @@ export default class Contact extends React.Component {
                         </div>
                     </div>
 
-                    <div className="container-fluid mb-5 mt-5">
+                    <div className="container mb-5 mt-5">
                         <div class="row justify-content-center">
 
 
-                            <div class="col-6">
+                            <div class="col-lg-6 col-sm-12">
                                 <h1 class="contact-h">LIFE<br />
                                     IT COULD BE <br />
                                     JUST THE THING<br />
@@ -36,7 +36,7 @@ export default class Contact extends React.Component {
                                     NEEDS.</h1>
 
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-6 col-sm-12">
                                 <form className="form">
                                     <div class=" justify-content-center">
                                         <h1 class="contact-header">Contact Us</h1>
@@ -45,12 +45,12 @@ export default class Contact extends React.Component {
                                     <div class="mb-3">
 
 
-                                        <label class="form-label">name</label>
-                                        <input type="text" class="form-control" placeholder="your name please" />
+                                        <label class="form-label">Name</label>
+                                        <input type="text" class="form-control" placeholder="Please, Enter your name" />
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Email address</label>
-                                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="your email please" />
+                                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Please, Enter your email" />
                                     </div>
 
                                     <div class="mb-3">
@@ -60,12 +60,12 @@ export default class Contact extends React.Component {
                                     <div class="mb-3 justify-content-center">
                                         <div class="form-group green-border-focus">
                                             <label class="form-label" >Your massage</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" placeholder="be nice please"></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" placeholder="Be nice!"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="row justify-content-center">
-                                        <button type="submit" class="btn loginbtn">send it!</button>
+                                        <button type="submit" class="btn loginbtn">Send it!</button>
                                     </div>
 
                                 </form>

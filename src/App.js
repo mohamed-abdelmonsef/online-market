@@ -6,6 +6,7 @@ import Cart from "./components/cart"
 import Product from "./components/product"
 import Contact from './components/contactUs'
 import AboutUs from './components/aboutUs'
+import Gallery from './components/Gallery'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/product' component={Product} exact />
       <Route path='/contact' component={Contact} exact />
       <Route path='/aboutUs' component={AboutUs} exact />
+      <Route path='/gallery' component={Gallery} exact />
     </Router>
   );
 }
