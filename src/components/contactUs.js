@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Footer from "./shared/footer";
+import Header from "./shared/header";
 
 
 export default class Contact extends React.Component {
@@ -10,19 +11,7 @@ export default class Contact extends React.Component {
         return (
             <div>
                 <section className="navSec">
-                    <div className="page">
-                        <div className="header">
-
-                            <nav aria-label="breadcrumb" className="mt-2">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><Link to="/">Home</Link></li>
-                                    <li class="breadcrumb-item"><Link to="/Dashboard">Dashboard</Link></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Login</li>
-                                </ol>
-                            </nav>
-                            <a class="navbar-brand me-5" href="#"><span>B</span>rilliant</a>
-                        </div>
-                    </div>
+                    <Header />
 
                     <div className="container mb-5 mt-5">
                         <div class="row justify-content-center">

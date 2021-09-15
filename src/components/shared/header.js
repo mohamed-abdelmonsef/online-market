@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {BiCart} from  "react-icons/bi"
-import {FaCrown} from "react-icons/fa"
+import {FaGem} from "react-icons/fa"
 
 export default class Header extends React.Component {
 
@@ -12,7 +12,7 @@ export default class Header extends React.Component {
                 <div>
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
-                            <Link class="navbar-brand me-5" to="/"><span ><FaCrown className="Logo fa-spin"/><span className="Logo2"><i style={{color:'whitesmoke'}}>B</i><b style={{color:'#f5f50c'}}>rilliant</b></span></span></Link>
+                            <Link class="navbar-brand me-5" to="/"><span ><FaGem className="Logo"/><span className="Logo2"><i style={{color:'#EAEAE1'}}>B</i><b style={{color:'#EAEAE1'}}>rilliant</b></span></span></Link>
                             <form class="d-flex ms-auto">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search .." aria-label="Recipient's username" aria-describedby="button-addon2" />

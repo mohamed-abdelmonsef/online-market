@@ -16,7 +16,7 @@ export default class Product extends React.Component {
                 <Header />
                 <div className="container">
                     <div className="row mb-5">
-                        <div className="">
+                        <div className="product">
                             {/* <li class="carousel-indicators bg-dark">
                                 <img src={firstd} type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></img>
                                 <img src={firstd} type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></img>
@@ -124,7 +124,7 @@ export default class Product extends React.Component {
                                 <button type="button" id="buynow" class="btn btn-primary ms-1 mb-2">Buy now</button>
                             </Link>
                             <button type="button" class="btn btn-secondary ms-1 mb-2"><i
-                                class="fa fa-shopping-cart me-1"></i>Add to cart</button>
+                                class="fa fa-shopping-cart me-1 text-secondary"></i>Add to cart</button>
                         </div>
 
                     </div>

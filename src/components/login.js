@@ -3,7 +3,7 @@ import { BsFillCaretRightFill } from "react-icons/bs";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Footer from "./shared/footer";
 import { FaCrown } from "react-icons/fa"
-
+import Header from '../components/shared/header'
 export default class Login extends React.Component {
 
 
@@ -13,21 +13,7 @@ export default class Login extends React.Component {
             <section className="navSec">
                 <div className="page">
                     <section>
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <div class="container-fluid">
-                                <Link class="navbar-brand me-5" to="/"><span ><FaCrown className="Logo fa-spin" /><span className="Logo2"><i style={{ color: 'whitesmoke' }}>B</i><b style={{ color: '#f5f50c' }}>rilliant</b></span></span></Link>
-                                <form class="d-flex ms-auto">
-                                    <div class="input-group">
-                                        <Link to="/">
-                                            <button class="btn btn-secondary "> Home</button>
-                                        </Link>&nbsp;
-                                    </div>
-                                </form>
-                                <button class="navbar-toggler justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                            </div>
-                        </nav>
+                        <Header />
                     </section>
                 </div>
                 <div className="container-fluid mb-5 mt-5">

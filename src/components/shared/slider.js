@@ -5,9 +5,9 @@ import secondImg from '../img/img2.jpg'
 import thirdImg from '../img/img3.jpg'
 import fourthImg from '../img/img4.jpg'
 import sixthImg from '../img/img6.jpg'
-import first from '../img/sale3.png'
-import second from '../img/sale2.jpg'
-import third from '../img/sale1.jpg'
+import first from '../img/slider1.jpg'
+import second from '../img/slider2.jpg'
+import third from '../img/slider3.jpg'
 
 
 export default class Slider extends React.Component {
