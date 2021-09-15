@@ -5,9 +5,95 @@ import Header from "./shared/header";
 
 
 export default class Register extends React.Component {
+    state = {
+        email: '',
+        password: '',
+        mobile: '',
+        address: '',
+        gender: '',
+        emailErr: {},
+        passwordErr: {},
+        mobileErr: {},
+        addressErr: {},
+        genderErr: {}
+    }
 
+    handleValidation() {
+        const { email, password, mobile, address } = this.state;
+        let formIsValid = true;
+        let emailErr = {};
+        let passwordErr = {};
+        let mobileErr = {};
+        let addressErr = {};
+        //Email Validation
+
+        if (!email) {
+            emailErr.emailLength = "Email cannot be empty";
+            formIsValid = false
+        }
+        let emailReg = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+        if (!email.match(emailReg)) {
+            emailErr.email = "Email is not valid, Please enter valid email"
+            formIsValid = false;
+        }
+
+        //End of Email Validation
+
+
+
+        //Password Validation
+        if (!password) {
+            passwordErr.passwordLength = "Password cannot be empty"
+            formIsValid = false
+        }
+        let passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,20}$/
+        if (!password.match(passwordReg)) {
+            passwordErr.password = "Password is not valid, must contain at least 10 chars special characters and numbers"
+            formIsValid = false;
+        }
+        //End of Password Validation
+
+
+        //Mobile Validation
+        if (!mobile) {
+            mobileErr.mobileLength = "Phone Number cannot be empty"
+            formIsValid = false
+        }
+        let mobileReg = /^01[0125][0-9]{8}$/
+        if (!mobile.match(mobileReg)) {
+            mobileErr.mobile = "Phone Number is not valid, ex:01012345678"
+            formIsValid = false;
+        }
+
+        if (!address) {
+            addressErr.addressLength = "Address cannot be empty"
+            formIsValid = false
+        }
+        // let mobileReg=/^01[0125][0-9]{8}$/
+        // if (!mobile.match(mobileReg)) {
+        //     mobileErr.mobile = "Phone Number is not valid, ex:01012345678"
+        //     formIsValid = false;
+        // }
+        this.setState({
+            emailErr, passwordErr, mobileErr, addressErr
+        })
+        return formIsValid
+    }
+
+
+    clkSubmit(e) {
+
+        e.preventDefault()
+        if (this.handleValidation()) {
+            alert("Form submitted");
+        } else {
+            alert("Form has errors.");
+            //console.log(this.state.errors);
+        }
+    }
 
     render() {
+        const { email, password, mobile, address, emailErr, passwordErr, mobileErr, addressErr } = this.state
         return (
             <div>
                 <section className="navSec">
@@ -15,24 +101,70 @@ export default class Register extends React.Component {
                     <div className="container-fluid mb-5 mt-5">
                         <section className="row justify-content-center">
                             <section className="col-12 col-sm-6 col-md-6 col-lg-3">
-                                <form className="form">
+                                <form className="form" onSubmit={(e) => {
+                                    this.clkSubmit(e)
+                                }}>
                                     <div class="mb-3">
                                         <label class="form-label">Email address</label>
-                                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="your email please" />
+                                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="your email please" value={email} onChange={(e) => {
+                                            this.setState({
+                                                email: e.target.value
+                                            })
+                                        }} />
+                                    </div>
+                                    <div className="mt-3 mb-3">
+                                        {Object.keys(emailErr).map((key) => {
+                                            return <div key={key} className="alert alert-danger">
+                                                {emailErr[key]}
+                                            </div>
+                                        })}
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Password</label>
-                                        <input type="password" class="form-control" minlength="5" placeholder="At Least 6 characters" />
+                                        <input type="password" class="form-control" minlength="5" placeholder="At Least 10 characters" value={password} onChange={(e) => {
+                                            this.setState({
+                                                password: e.target.value
+                                            })
+                                        }} />
+                                    </div>
+
+                                    <div className="mt-3 mb-3">
+                                        {Object.keys(passwordErr).map((key) => {
+                                            return <div key={key} className="alert alert-danger">
+                                                {passwordErr[key]}
+                                            </div>
+                                        })}
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Mobile</label>
-                                        <input type="tel" class="form-control" placeholder="+123" />
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" placeholder="01012345678" value={mobile} onChange={(e) => {
+                                            this.setState({
+                                                mobile: e.target.value
+                                            })
+                                        }} />
+                                    </div>
+                                    <div className="mt-3 mb-3">
+                                        {Object.keys(mobileErr).map((key) => {
+                                            return <div key={key} className="alert alert-danger">
+                                                {mobileErr[key]}
+                                            </div>
+                                        })}
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Address</label>
-                                        <input type="text" class="form-control" placeholder="your adress please" />
+                                        <input type="text" class="form-control" placeholder="your adress please" value={address} onChange={(e) => {
+                                            this.setState({
+                                                address: e.target.value
+                                            })
+                                        }} />
                                     </div>
-
+                                    <div className="mt-3 mb-3">
+                                        {Object.keys(addressErr).map((key) => {
+                                            return <div key={key} className="alert alert-danger">
+                                                {addressErr[key]}
+                                            </div>
+                                        })}
+                                    </div>
                                     <div class="mb-3">
                                         < div class="row">
                                             <div class="col-4">
@@ -40,7 +172,7 @@ export default class Register extends React.Component {
                                             </div>
                                             <div class="col-4">
                                                 <input type="radio" id="contactChoice1"
-                                                    name="contact" value="Male" />
+                                                    name="contact" value="Male" checked='checked' />
                                                 <label for="contactChoice1" className="ms-1">Male</label>
                                             </div>
                                             <div class="col-4">
