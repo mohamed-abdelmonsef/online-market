@@ -398,7 +398,7 @@
 }
 
 .home .container {
-  padding-left: 100px;
+ 
 }
 
 /* end of gallery component*/
@@ -428,6 +428,42 @@
 
 /* End of about us */
 
+
+.ss{
+  width: 300px;
+  height: 350px;
+  border-radius: 20px;
+}
+.bb{
+  background-color: aliceblue;
+  color: #3f5274;
+  padding:10px 25px !important;
+  border: #3f5274;
+  border-radius: 6px ;
+  font-size: 18px;
+}
+.bb:hover{
+  background-color:#304c7c;
+  color: #ddd;
+}
+.cc{
+  color:#ddd;
+  font-size: 18px;
+  justify-content: center;
+  padding: 5px;
+}
+
+.mm{
+  display:inline-block;
+  color:#ddd;
+  font-weight: bolder;
+  border-radius: 6px ;
+margin-right: 10px;
+}
+.tt{
+  width: 80%;
+  overflow: hidden;
+}
 
 
 

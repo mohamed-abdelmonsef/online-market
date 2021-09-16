@@ -20,19 +20,19 @@ export default class MenGallery extends React.Component {
                     <div className="gallery-header">
                         <ul class="nav nav-pills nav-fill">
                             <li class="nav-item">
-                            <Link to="/men">
-                                <button class="nav-link active">Men</button>
-                            </Link>
+                                <Link to="/gallery/men">
+                                    <button class="nav-link active">Men</button>
+                                </Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/women">
-                                <button class="nav-link">Women</button>
-                            </Link>
+                                <Link to="/gallery/women">
+                                    <button class="nav-link">Women</button>
+                                </Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/kids">
-                                <button class="nav-link">Kids</button>
-                            </Link>
+                                <Link to="/gallery/kids">
+                                    <button class="nav-link">Kids</button>
+                                </Link>
                             </li>
                         </ul>
                     </div>

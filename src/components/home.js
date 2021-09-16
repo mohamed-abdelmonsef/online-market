@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./shared/header";
 import Slider from "./shared/slider";
 import Footer from "./shared/footer";
+import MyCarousel from './shared/MyCarousel'
 import first from '../components/img/home4.webp'
 import second from '../components/img/home7.webp'
 import third from '../components/img/home3.webp'
@@ -22,55 +23,13 @@ export default class Home extends React.Component {
             <div>
                 <Header />
                 <Slider />
+                <div className="container">
+
+                    <section class="home p-5" style={{
+                        //backgroundColor: 'whitesmoke'
+                    }}>
 
 
-                <section class="home p-5" style={{
-                    //backgroundColor: 'whitesmoke'
-                }}>
-
-                    <div className="container" >
-                        <div className="row">
-                            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 mb-3">
-                                <div class="card w-75" style={{
-                                    width: "18rem;"
-                                }}>
-                                    <img src={first} class="card-img-top" alt="..." className="img-home" />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Women</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Women</a>
-                                    </div>
-                                </div>
-                            </div>
-                            {/*  */}
-                            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 mb-3">
-                                <div class="card w-75" style={{
-                                    width: "10rem;"
-                                }}>
-                                    <img src={second} class="card-img-top" alt="..." className="img-home" />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Men</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Men</a>
-                                    </div>
-                                </div>
-                            </div>
-                            {/*  */}
-
-                            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 mb-3">
-                                <div class="card w-75" style={{
-                                    width: "10rem;"
-                                }}>
-                                    <img src={third} class="card-img-top" alt="..." className="img-home" />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Kids</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                                        <a href="#" class="btn btn-primary">Kids</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         {/*  */}
 
                         <div className="home-4">
@@ -106,7 +65,11 @@ export default class Home extends React.Component {
 
                         </div>
 
+                        <div className="row">
+                            <MyCarousel />
 
+
+                        </div>
                         {/*  */}
 
                         <div className="home-3 " >
@@ -128,14 +91,19 @@ export default class Home extends React.Component {
 
                             </div>
                         </div>
-                    </div>
 
-                    {/*  */}
 
-                </section>
 
+                        {/*  */}
+
+
+                    </section>
+                </div>
                 <Footer />
+
             </div>
+
+
 
         )
     }
