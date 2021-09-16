@@ -11,7 +11,7 @@ import fourth from './img/home1.webp'
 import fifth from './img/home8.webp'
 import sixth from './img/home6.webp'
 
-export default class Gallery extends React.Component {
+export default class WomenGallery extends React.Component {
     render() {
         return (
             <div>
@@ -20,13 +20,19 @@ export default class Gallery extends React.Component {
                     <div className="gallery-header">
                         <ul class="nav nav-pills nav-fill">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Men</a>
+                            <Link to="/men">
+                                <button class="nav-link">Men</button>
+                            </Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Women</a>
+                            <Link to="/women">
+                                <button class="nav-link active">Women</button>
+                            </Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Kids</a>
+                            <Link to="/kids">
+                                <button class="nav-link">Kids</button>
+                            </Link>
                             </li>
                         </ul>
                     </div>
