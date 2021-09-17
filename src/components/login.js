@@ -2,14 +2,18 @@ import React from "react";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Footer from "./shared/footer";
-import { FaCrown } from "react-icons/fa"
 import Header from '../components/shared/header'
+
+import Services from "../services/site.services";
+
 export default class Login extends React.Component {
     state = {
         email: '',
         password: '',
         emailErr: {},
-        passwordErr: {}
+        passwordErr: {},
+        DbCheck: '',
+        Flag: false
     }
 
     handleValidation() {
@@ -38,7 +42,7 @@ export default class Login extends React.Component {
             passwordErr.passwordLength = "Password cannot be empty"
             formIsValid = false
         }
-        let passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,20}$/
+        let passwordReg = /(?=.*[0-9])/
         if (!password.match(passwordReg)) {
             passwordErr.password = "Password is not valid, must contain at least 10 chars special characters and numbers"
             formIsValid = false;
@@ -56,7 +60,22 @@ export default class Login extends React.Component {
 
         e.preventDefault()
         if (this.handleValidation()) {
-            alert("Form submitted");
+            let user = {
+                email: this.state.email,
+                password: this.state.password
+            }
+            Services.checkUser(user).then((res) => {
+                this.setState({
+                    DbCheck: res.data.message,
+                    Flag: true
+                })
+                // alert(res.data.message);
+                if (res.data.logged) {
+                    let session = { email: user.email, logged: true }
+                    localStorage.setItem('userSession', JSON.stringify(session))
+                    this.props.history.push('/')
+                }
+            })
         } else {
             alert("Form has errors.");
             //console.log(this.state.errors);
@@ -64,7 +83,7 @@ export default class Login extends React.Component {
     }
 
     render() {
-        const { email, password, emailErr, passwordErr } = this.state
+        const { email, password, emailErr, passwordErr, DbCheck } = this.state
         //console.log(errors.email);
         return (
             <section className="navSec">
@@ -79,6 +98,14 @@ export default class Login extends React.Component {
                             <form className="form" onSubmit={(e) => {
                                 this.clkSubmit(e)
                             }}>
+
+                                <div className="mt-3 mb-3">
+                                    {
+                                        <div style={this.state.Flag ? {} : { display: 'none' }} className="alert alert-danger">
+                                            {DbCheck}
+                                        </div>
+                                    }
+                                </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email address</label>
                                     <input type="email" class="form-control" aria-describedby="emailHelp" value={email} onChange={(e) => {

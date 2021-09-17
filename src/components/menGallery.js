@@ -49,7 +49,7 @@ export default class MenGallery extends React.Component {
                         </div>
                         <div class="col">
                             <div class="row">
-                                <div class="col-12 col-md-6 col-lg-4 mb- ">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3 ">
                                     <div class="card">
                                         <img class="card-img-top " src={two} alt="Card image cap" />
                                         <div class="card-body">
@@ -66,7 +66,7 @@ export default class MenGallery extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <img class="card-img-top" src={three} alt="Card image cap" />
                                         <div class="card-body">
@@ -83,7 +83,7 @@ export default class MenGallery extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <img class="card-img-top" src={four} alt="Card image cap" />
                                         <div class="card-body">
@@ -100,7 +100,7 @@ export default class MenGallery extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <img class="card-img-top" src={five} alt="Card image cap" />
                                         <div class="card-body">
@@ -117,7 +117,7 @@ export default class MenGallery extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <img class="card-img-top" src={six} alt="Card image cap" />
                                         <div class="card-body">
@@ -134,7 +134,7 @@ export default class MenGallery extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <img class="card-img-top" src={seven} alt="Card image cap" />
                                         <div class="card-body">
@@ -151,7 +151,7 @@ export default class MenGallery extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <img class="card-img-top" src={eight} alt="Card image cap" />
                                         <div class="card-body">
@@ -168,7 +168,7 @@ export default class MenGallery extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <img class="card-img-top" src={nine} alt="Card image cap" />
                                         <div class="card-body">
@@ -185,7 +185,7 @@ export default class MenGallery extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <img class="card-img-top" src={ten} alt="Card image cap" />
                                         <div class="card-body">

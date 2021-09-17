@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "./shared/footer";
 import Header from "./shared/header";
+import Services from "../services/site.services";
 
 
 export default class Register extends React.Component {
@@ -15,7 +16,9 @@ export default class Register extends React.Component {
         passwordErr: {},
         mobileErr: {},
         addressErr: {},
-        genderErr: {}
+        genderErr: {},
+        DbCheck: '',
+        Flag: false
     }
 
     handleValidation() {
@@ -46,7 +49,7 @@ export default class Register extends React.Component {
             passwordErr.passwordLength = "Password cannot be empty"
             formIsValid = false
         }
-        let passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,20}$/
+        let passwordReg = /(?=.*[0-9])/
         if (!password.match(passwordReg)) {
             passwordErr.password = "Password is not valid, must contain at least 10 chars special characters and numbers"
             formIsValid = false;
@@ -85,7 +88,22 @@ export default class Register extends React.Component {
 
         e.preventDefault()
         if (this.handleValidation()) {
-            alert("Form submitted");
+            let newUser = {
+                email: this.state.email,
+                password: this.state.password,
+                mobile: this.state.mobile,
+                address: this.state.address,
+                gender: this.state.gender,
+            }
+
+            Services.addUser(newUser).then((res) => {
+                this.setState({
+                    DbCheck: res.data.message,
+                    Flag: true
+                })
+            })
+
+
         } else {
             alert("Form has errors.");
             //console.log(this.state.errors);
@@ -93,7 +111,7 @@ export default class Register extends React.Component {
     }
 
     render() {
-        const { email, password, mobile, address, emailErr, passwordErr, mobileErr, addressErr } = this.state
+        const { email, password, mobile, address, emailErr, passwordErr, mobileErr, addressErr, DbCheck } = this.state
         return (
             <div>
                 <section className="navSec">
@@ -103,7 +121,15 @@ export default class Register extends React.Component {
                             <section className="col-12 col-sm-6 col-md-6 col-lg-3">
                                 <form className="form" onSubmit={(e) => {
                                     this.clkSubmit(e)
+
                                 }}>
+                                    <div className="mt-3 mb-3">
+                                        {
+                                            <div style={this.state.Flag ? {} : { display: 'none' }} className="alert alert-danger">
+                                                {DbCheck}
+                                            </div>
+                                        }
+                                    </div>
                                     <div class="mb-3">
                                         <label class="form-label">Email address</label>
                                         <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="your email please" value={email} onChange={(e) => {
@@ -166,19 +192,27 @@ export default class Register extends React.Component {
                                         })}
                                     </div>
                                     <div class="mb-3">
-                                        < div class="row">
+                                        <div class="row">
                                             <div class="col-4">
                                                 <label class="form-label">Gender</label>
                                             </div>
                                             <div class="col-4">
                                                 <input type="radio" id="contactChoice1"
-                                                    name="contact" value="Male" checked='checked' />
-                                                <label for="contactChoice1" className="ms-1">Male</label>
+                                                    name="contact" value="Male" checked={this.state.gender === 'Male'} onChange={(e) => {
+                                                        this.setState({
+                                                            gender: e.target.value
+                                                        })
+                                                    }} />
+                                                <label for="contactChoice1" className="ms-1" >Male</label>
                                             </div>
                                             <div class="col-4">
                                                 <input type="radio" id="contactChoice1"
-                                                    name="contact" value="Female" />
-                                                <label for="contactChoice1" className="ms-1">Female</label>
+                                                    name="contact" value="Female" checked={this.state.gender === 'Female'} onChange={(e) => {
+                                                        this.setState({
+                                                            gender: e.target.value
+                                                        })
+                                                    }} />
+                                                <label for="contactChoice1" className="ms-1" >Female</label>
                                             </div>
                                         </div>
 
@@ -198,7 +232,6 @@ export default class Register extends React.Component {
                                 <div className="line ">
                                     <p className="new" >
                                         Aleardy have an account?
-
                                     </p>
                                 </div>
                                 <div className="mt-2">
