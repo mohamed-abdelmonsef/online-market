@@ -362,6 +362,8 @@ color: #F56A6A;
 
 
   /* End of Product */
+
+
 /* contact */
 .contact-h{
   margin-top: 20px;
@@ -438,8 +440,20 @@ color: #F56A6A;
   color: white;
 }
 
-.home .container {
- 
+.bloc_left_price {
+  color: #c01508;
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+.category_block li:hover {
+  background-color: #007bff;
+}
+.category_block li:hover a {
+  color: #ffffff;
+}
+.category_block li a {
+  color: #343a40;
 }
 
 /* end of gallery component*/
@@ -469,6 +483,7 @@ color: #F56A6A;
 
 /* End of about us */
 
+/* My Carousel */
 
 .ss{
   width: 300px;
@@ -506,6 +521,7 @@ margin-right: 10px;
   overflow: hidden;
 }
 
+/* End of MyCarousel */
 
 
 

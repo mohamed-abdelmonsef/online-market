@@ -8,6 +8,8 @@ import fifth from '../components/img/pers2.jpg'
 import sixth from '../components/img/pers3.jpg'
 import seventh from '../components/img/pers4.jpg'
 import Footer from "./shared/footer";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 
 
@@ -20,6 +22,52 @@ export default class AboutUs extends React.Component {
         return (
             <div>
                 <Header />
+                <section >
+                    <div className="gallery-header">
+                        <ul class="nav nav-pills nav-fill">
+                            <li class="nav-item">
+                                <Link to="/" style={{ textDecoration: 'none' }}>
+                                    <button class="nav-link" >Home</button>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/gallery/women" style={{ textDecoration: 'none' }}>
+                                    <button class="nav-link ">Gallery</button>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/Login" style={{ textDecoration: 'none' }}>
+                                    <button class="nav-link">Login</button>
+                                </Link>
+                            </li>
+                            <li class="nav-item" >
+                                <Link to="/register" style={{ textDecoration: 'none' }}>
+                                    <button class="nav-link">Register</button>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/aboutUs" style={{ textDecoration: 'none' }}>
+                                    <button class="nav-link active" style={{ backgroundColor: '#EAEAE1', color: '#002244' }}>About Us</button>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/contact" style={{ textDecoration: 'none' }}>
+                                    <button class="nav-link">Contact Us</button>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/product" style={{ textDecoration: 'none' }}>
+                                    <button class="nav-link">Product</button>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link to="/cart" style={{ textDecoration: 'none' }}>
+                                    <button class="nav-link">Cart</button>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
 
                 <div class="bg-light">
                     <div class="container py-5">

@@ -3,7 +3,10 @@ import ReactDOM from "react-dom";
 import ReactCardCarousel from "react-card-carousel";
 import first from "../img/home7.webp"
 import sec from "../img/home1.webp"
-import third from "../img/home3.webp"
+import one from "../img/home3.webp"
+import two from "../img/home8.webp"
+import three from "../img/kid1.webp"
+
 import { Link } from 'react-router-dom'
 class MyCarousel extends Component {
   static get CONTAINER_STYLE() {
@@ -40,7 +43,7 @@ class MyCarousel extends Component {
         <div style={MyCarousel.CONTAINER_STYLE}>
           <ReactCardCarousel autoplay={true} autoplay_speed={3000}>
             <div style={MyCarousel.CARD_STYLE}>
-              <img src={first} className="ss" />
+              <img src={two} className="ss" />
               <div className="cc"><p>Fashion means something that is trendy or valued in
                 a certain time period. The prevailing fashion/
                 trends/style is called ‘vogue’.
@@ -52,7 +55,7 @@ class MyCarousel extends Component {
             </div>
             {/*  */}
             <div style={MyCarousel.CARD_STYLE}>
-              <img src={third} className="ss" />
+              <img src={one} className="ss" />
               <div className="cc"><p>Fashion means something that is trendy or valued in
                 a certain time period. The prevailing fashion/
                 trends/style is called ‘vogue’.
@@ -65,7 +68,7 @@ class MyCarousel extends Component {
             </div>
             {/*  */}
             <div style={MyCarousel.CARD_STYLE}>
-              <img src={sec} className="ss" />
+              <img src={three} className="ss" />
               <div className="cc"><p>Fashion means something that is trendy or valued in
                 a certain time period. The prevailing fashion/
                 trends/style is called ‘vogue’.
