@@ -9,6 +9,7 @@ import AboutUs from './components/aboutUs'
 import MenGallery from './components/menGallery'
 import WomenGallery from './components/womenGallery'
 import KidsGallery from './components/kidsGallery'
+import Admin from "./components/admin";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path='/gallery/men' component={MenGallery} exact />
       <Route path='/gallery/women' component={WomenGallery} exact />
       <Route path='/gallery/kids' component={KidsGallery} exact />
+      <Route path='/admin' component={Admin} exact />
     </Router>
   );
 }
