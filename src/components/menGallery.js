@@ -1,5 +1,6 @@
 import { detectOverflow } from "@popperjs/core";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Services from "../services/site.services";
 
 import React from "react";
 import Header from "./shared/header";
@@ -20,6 +21,19 @@ import ten from './img/g9.webp'
 
 
 export default class MenGallery extends React.Component {
+    state = {
+        products: []
+    }
+
+    componentWillMount() {
+        Services.getProducts('men').then((res) => {
+            this.setState({
+                products: res.data.products
+            })
+        })
+    }
+
+
     render() {
         return (
             <div>
@@ -49,160 +63,29 @@ export default class MenGallery extends React.Component {
                         </div>
                         <div class="col">
                             <div class="row">
-                                <div class="col-12 col-md-6 col-lg-4 mb-3 ">
-                                    <div class="card">
-                                        <img class="card-img-top " src={two} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={three} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={four} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={five} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={six} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={seven} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={eight} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={nine} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src={ten} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">Product title</Link></h4>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">99.00 $</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
+                                {this.state.products.map((prod, index) => {
+                                    return (
+
+                                        <div class="col-12 col-md-6 col-lg-4 mb-3 " key={index}>
+                                            <div class="card">
+                                                <img class="card-img-top " src={two} alt="Card image cap" />
+                                                <div class="card-body">
+                                                    <h4 class="card-title"><Link to="/product" title="View Product">{prod.title}</Link></h4>
+                                                    <p class="card-text">{prod.desc}</p>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <p class="btn btn-danger btn-block">{prod.price}</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="#" class="btn btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     </div>
