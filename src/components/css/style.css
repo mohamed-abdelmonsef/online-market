@@ -40,6 +40,47 @@
   color: #002244;
   font-weight: bolder;
 }
+
+/* offcanvas */
+.offcanvas{
+  background-color: #202E4A !important;
+  color: white;
+}
+ul {
+  list-style-type: none;
+}
+li >a{
+  list-style-type: none;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+li >a:hover{
+color: #F56A6A;
+}
+
+.offcanvas .btn-warning{
+  background-color: #ff9d00;
+  border: unset;
+  color: white;
+}
+.offcanvas .btn-warning:hover{
+  background-color: #ff9d00d0;
+  color: white;
+  
+}
+.offcanvas button{
+  margin-left: 70px;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.navbar-toggler-icon{
+  cursor: pointer;
+}
+
+
 /* End of header */
 
 

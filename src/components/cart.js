@@ -7,9 +7,13 @@ import second from '../components/img/cart7.webp'
 import third from '../components/img/cart1.webp';
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
+// import * as Scroll from 'react-scroll';
+// import { Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 export default class Cart extends React.Component {
+    // componentDidMount() {
+    //     Scroll.animateScroll.scrollToBottom();
+    // }
 
 
     render() {

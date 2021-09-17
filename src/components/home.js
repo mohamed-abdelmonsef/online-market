@@ -24,19 +24,10 @@ export default class Home extends React.Component {
                 <Header />
                 <Slider />
                 <div className="container">
-
-                    <section class="home p-5" style={{
-                        //backgroundColor: 'whitesmoke'
-                    }}>
-
-
-                        {/*  */}
-
+                    <section class="home p-5">
                         <div className="home-4">
-
                             <h1 className="home-4-h text-center">
                                 We bring best things <span className="for">For</span> clients
-
                             </h1>
                             <div className="row">
                                 <div className="col"><GiMoneyStack className="icon-home" />
@@ -44,7 +35,6 @@ export default class Home extends React.Component {
                                         and are equal to world market prices,Our prices are suitable for everyone
                                         and are equal to world market prices,Our prices are suitable for everyone
                                         and are equal to world market prices
-
                                     </p>
                                 </div>
                                 <div className="col"><AiOutlineCar className="icon-home" />
@@ -59,27 +49,16 @@ export default class Home extends React.Component {
                                         especially for youOur clothes are made with the best types of fabrics, with love,
                                         especially for you.</p>
                                 </div>
-
                             </div>
-
-
                         </div>
-
                         <div className="row">
                             <MyCarousel />
-
-
                         </div>
-                        {/*  */}
-
                         <div className="home-3 " >
                             <h2 className="home-eve">
-
                                 <span className="for">For</span> you</h2>
-
                             <div className="row">
                                 <div className="col">
-
                                     <img src={fourth} class="border-button"></img>
                                 </div>
                                 <div className="col">
@@ -87,20 +66,11 @@ export default class Home extends React.Component {
                                         is a world that has developed over the years to become one of
                                         the most important trends of our time.</h4>
                                 </div>
-
-
                             </div>
                         </div>
-
-
-
-                        {/*  */}
-
-
                     </section>
                 </div>
                 <Footer />
-
             </div>
 
 
