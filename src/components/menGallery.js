@@ -22,7 +22,8 @@ import ten from './img/g9.webp'
 
 export default class MenGallery extends React.Component {
     state = {
-        products: []
+        products: [],
+        cartProd: []
     }
 
     componentWillMount() {
@@ -71,19 +72,29 @@ export default class MenGallery extends React.Component {
                                             <div class="card">
                                                 <img class="card-img-top " src={two} alt="Card image cap" />
                                                 <div class="card-body">
-                                                    <h4 class="card-title"><Link to="/product" title="View Product">{prod.title}</Link></h4>
+                                                    <h4 class="card-title"><Link onClick={() => {
+                                                        localStorage.setItem(`Product0`, JSON.stringify(prod));
+                                                        // localStorage.setItem(`ProductDesc`, prod.desc);
+                                                        // localStorage.setItem(`ProductPrice`, prod.price)
+
+                                                    }} to="/product" title="View Product">{prod.title}</Link></h4>
                                                     <p class="card-text">{prod.desc}</p>
                                                     <div class="row">
                                                         <div class="col">
                                                             <p class="btn btn-danger btn-block">{prod.price}</p>
                                                         </div>
                                                         <div class="col">
-                                                            <a href="#" class="btn btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
+                                                            <a href="#" onClick={() => {
+                                                                this.state.cartProd.push(prod)
+                                                                console.log(this.state.cartProd);
+                                                                localStorage.setItem('cartArr', JSON.stringify(this.state.cartProd))
+                                                            }} class="btn btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     )
                                 })}
                             </div>

@@ -20,13 +20,14 @@ import ten from './img/w9.webp'
 export default class WomenGallery extends React.Component {
 
     state = {
-        products:[]
+        products: [],
+        cartProd: []
     }
 
-    componentWillMount(){
-        Services.getProducts('women').then((res)=>{
+    componentWillMount() {
+        Services.getProducts('women').then((res) => {
             this.setState({
-                products:res.data.products
+                products: res.data.products
             })
         })
     }
@@ -60,27 +61,36 @@ export default class WomenGallery extends React.Component {
                         <div class="col">
                             <div class="row">
 
-                            {this.state.products.map((prod,index)=>{
-                                return(
-                                <div class="col-12 col-md-6 col-lg-4 mb-3 " key={index}>
-                                    <div class="card">
-                                        <img class="card-img-top " src={two} alt="Card image cap" />
-                                        <div class="card-body">
-                                            <h4 class="card-title"><Link to="/product" title="View Product">{prod.title}</Link></h4>
-                                            <p class="card-text">{prod.desc}</p>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="btn btn-danger btn-block">{prod.price}</p>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
+                                {this.state.products.map((prod, index) => {
+                                    return (
+                                        <div class="col-12 col-md-6 col-lg-4 mb-3 " key={index}>
+                                            <div class="card">
+                                                <img class="card-img-top " src={two} alt="Card image cap" />
+                                                <div class="card-body">
+                                                    <h4 class="card-title"><Link nClick={() => {
+                                                        localStorage.setItem(`Product0`, JSON.stringify(prod));
+                                                        // localStorage.setItem(`ProductDesc`, prod.desc);
+                                                        // localStorage.setItem(`ProductPrice`, prod.price)
+
+                                                    }} to="/product" title="View Product">{prod.title}</Link></h4>
+                                                    <p class="card-text">{prod.desc}</p>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <p class="btn btn-danger btn-block">{prod.price}</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="#" onClick={() => {
+                                                                this.state.cartProd.push(prod)
+                                                                console.log(this.state.cartProd);
+                                                                localStorage.setItem('cartArr', JSON.stringify(this.state.cartProd))
+                                                            }} class="btn  btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                )
-                            })}
+                                    )
+                                })}
                             </div>
                         </div>
 

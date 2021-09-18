@@ -14,9 +14,18 @@ export default class Cart extends React.Component {
     // componentDidMount() {
     //     Scroll.animateScroll.scrollToBottom();
     // }
+    state = {
+        cartArr: []
+    }
 
+    componentWillMount() {
+        this.setState({
+            cartArr: JSON.parse(localStorage.getItem('cartArr'))
+        })
+    }
 
     render() {
+        console.log(this.state.cartArr);
         return (
             <>
                 <Header />
@@ -31,85 +40,50 @@ export default class Cart extends React.Component {
                                     <th>Product Name</th>
                                     <th class="text-center">Quantity</th>
                                     <th class="text-center">Subtotal</th>
-                                    <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
+                                    <th class="text-center"><a onClick={() => {
+                                        this.setState({
+                                            cartArr: []
+                                        })
+                                        localStorage.setItem('cartArr', ['[]'])
+                                    }} class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="product-item">
-                                            <img className="myimg" src={first} alt="Product" />&nbsp; &nbsp;
-                                            <div class="product-info">
-                                                <h4 class="product-title">Vintage Logo Crew-Neck Sweatshirt for Women</h4>
-                                                <span>Introducing Vintage Vibes, a new line of soft-washed fleece.</span>
-                                                <br /><span><em>Size:</em> L</span><br /><span><em>Color:</em> Medium Heather Gray</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="count-input">
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="text-center text-lg text-medium">$43.90</td>
-                                    <td class="text-center"><BsTrash className="myicon" /></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-item">
-                                            <img className="myimg" src={second} alt="Product" />&nbsp; &nbsp;
-                                            <div class="product-info">
-                                                <h4 class="product-title">Soft-Washed Graphic T-Shirt for Men</h4>
-                                                <span>Bright Days t-shirts feature a small-scale graphic at left side of chest,<br /> with large-scale graphic across back.</span>
-                                                <br /><span><em>Size:</em> XL</span><br /><span><em>Color:</em> Teal</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="count-input">
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option selected="">2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="text-center text-lg text-medium">$24.89</td>
-                                    <td class="text-center"><BsTrash className="myicon" /></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="product-item">
-                                            <img className="myimg" src={third} alt="Product" />&nbsp; &nbsp;
-                                            <div class="product-info">
-                                                <h4 class="product-title">Logo-Graphic Pullover Hoodie for Women</h4>
-                                                <span>Long raglan sleeves, with elasticated rib-knit cuffs.</span>
-                                                <br /> <span><em>Size:</em> M</span><br /><span><em>Color:</em> Tidewater</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="count-input">
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td class="text-center text-lg text-medium">$200.00</td>
-                                    <td class="text-center"><BsTrash className="myicon" /></td>
-                                </tr>
+                                {this.state.cartArr.map((prod, index) => {
+                                    return (
+                                        <tr>
+                                            <td>
+                                                <div class="product-item">
+                                                    <img className="myimg" src={first} alt="Product" />&nbsp; &nbsp;
+                                                    <div class="product-info">
+                                                        <h4 class="product-title">{prod.title}</h4>
+                                                        <span>{prod.desc}.</span>
+                                                        <br /><span><em>Size:</em> L</span><br /><span><em>Color:</em> Medium Heather Gray</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="count-input">
+                                                    <select class="form-control">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td class="text-center text-lg text-medium">{prod.price}</td>
+                                            <td class="text-center"><BsTrash style={{ cursor: "pointer" }} onClick={() => {
+                                                this.state.cartArr.splice(index, 1)
+                                                localStorage.setItem('cartArr', JSON.stringify(this.state.cartArr))
+                                                this.setState({
+                                                    cartArr: this.state.cartArr
+                                                })
+                                            }} className="myicon" /></td>
+                                        </tr>
+                                    )
+                                })}
                             </tbody>
                         </table>
                     </div>

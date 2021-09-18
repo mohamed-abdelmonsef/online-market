@@ -11,6 +11,7 @@ export default class Product extends React.Component {
 
 
     render() {
+        console.log(localStorage.getItem('Product0'));
         return (
             <section className="productDetails">
                 <Header />
@@ -48,7 +49,7 @@ export default class Product extends React.Component {
                         </div>
 
                         <div className="col-xs-12 col-lg-5">
-                            <h5>Fantasy T-shirt</h5>
+                            <h5>{JSON.parse(localStorage.getItem('Product0')).title}</h5>
                             <p class="mb-2 text-muted text-uppercase small">Shirts</p>
                             <ul class="rating">
                                 <li>
@@ -59,10 +60,8 @@ export default class Product extends React.Component {
                                     <i class="fa fa-star fa-sm text-primary"></i>
                                 </li>
                             </ul>
-                            <p><span class="mr-1"><strong>$12.99</strong></span></p>
-                            <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-                                error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-                                officia quis dolore quos sapiente tempore alias.</p>
+                            <p><span class="mr-1"><strong>{JSON.parse(localStorage.getItem('Product0')).price}</strong></span></p>
+                            <p class="pt-1">{JSON.parse(localStorage.getItem('Product0')).desc}</p>
 
                             <div class="table-responsive mb-4">
                                 <table class="table table-sm table-borderless mb-0">
