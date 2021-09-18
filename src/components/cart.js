@@ -2,9 +2,8 @@ import React from "react";
 import Header from "./shared/header";
 import Footer from "./shared/footer";
 import './css/style.css';
-import first from '../components/img/cart3.webp';
-import second from '../components/img/cart7.webp'
-import third from '../components/img/cart1.webp';
+
+
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
 // import * as Scroll from 'react-scroll';
@@ -83,7 +82,7 @@ export default class Cart extends React.Component {
 
 
                                                 <div class="product-item">
-                                                    <img className="myimg" src={first} alt="Product" />&nbsp; &nbsp;
+                                                    <img className="myimg" src={process.env.PUBLIC_URL + `/img/Cart/cart3.webp`} alt="Product" />&nbsp; &nbsp;
                                                     <div class="product-info">
                                                         <h4 class="product-title">{prod.title}</h4>
                                                         <span>{prod.desc}.</span>

@@ -587,7 +587,51 @@ margin-right: 10px;
   color: #495057;
 }
 /* End of admin */
+.image-box{
+  position: relative;
+  height: 400px;
+}
+.imgcenter{
+  /* background-image: url(../img/imgcenter.jpg) ; */
+  background: linear-gradient(rgb(105, 150, 196), rgba(0,0,0,0.5)), url(../img/imgcenter.jpeg) center center;
+  height: 400px;
+  size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-attachment: fixed;
+ /* opacity: 0.5; */
+ position: absolute;
+}
+.image-box__overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 
+}
+
+.image-box__content {
+  position: relative;
+
+  z-index: 3;
+
+  /* Finally, style and place the content */
+  color: white;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.home .card{
+  padding: 40px;
+ 
+}
 
 
 

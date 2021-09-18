@@ -1,7 +1,7 @@
 import React from "react";
-import firstd from '../components/img/d1.jpg'
-import secondd from '../components/img/d2.jpg'
-import thirdd from '../components/img/d3.jpg'
+// import firstd from '../components/img/d1.jpg'
+// import secondd from '../components/img/d2.jpg'
+// import thirdd from '../components/img/d3.jpg'
 import Footer from "./shared/footer";
 import { Link } from "react-router-dom";
 import Header from "./shared/header";
@@ -58,23 +58,23 @@ export default class Product extends React.Component {
                             <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
                                 <div class="carousel-inner mb-4">
                                     <div class="carousel-item active">
-                                        <img src={firstd} class="d-block w-100" alt="..." />
+                                        <img src={process.env.PUBLIC_URL + `/img/Product/d1.jpg`} class="d-block w-100" alt="..." />
+                                    </div>
+                                    {/* <div class="carousel-item">
+                                        <img src={process.env.PUBLIC_URL + `/img/Product/d2.jpg`} class="d-block w-100" alt="..." />
                                     </div>
                                     <div class="carousel-item">
-                                        <img src={secondd} class="d-block w-100" alt="..." />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src={thirdd} class="d-block w-100" alt="..." />
-                                    </div>
+                                        <img src={process.env.PUBLIC_URL + `/img/Product/d3.jpg`} class="d-block w-100" alt="..." />
+                                    </div> */}
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
                                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
-                                </button>
+                                </button> */}
                             </div>
                         </div>
 

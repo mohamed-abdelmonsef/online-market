@@ -1,13 +1,13 @@
 import React from "react";
 //import classes from '../css/slider.module.css';
-import firstImg from '../img/img1.jpg'
-import secondImg from '../img/img2.jpg'
-import thirdImg from '../img/img3.jpg'
-import fourthImg from '../img/img4.jpg'
-import sixthImg from '../img/img6.jpg'
-import first from '../img/slider1.jpg'
-import second from '../img/slider2.jpg'
-import third from '../img/slider3.jpg'
+// import firstImg from '../img/img1.jpg'
+// import secondImg from '../img/img2.jpg'
+// import thirdImg from '../img/img3.jpg'
+// import fourthImg from '../img/img4.jpg'
+// import sixthImg from '../img/img6.jpg'
+// import first from '../img/slider1.jpg'
+// import second from '../img/slider2.jpg'
+// import third from '../img/slider3.jpg'
 
 
 export default class Slider extends React.Component {
@@ -24,17 +24,17 @@ export default class Slider extends React.Component {
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src={first} style={{
+                            <img src={process.env.PUBLIC_URL + `/img/slider/slider1.jpg`} style={{
                                 height: '400px'
                             }} class="d-block w-100" alt="..." />
                         </div>
                         <div class="carousel-item">
-                            <img src={second} style={{
+                            <img src={process.env.PUBLIC_URL + `/img/slider/slider2.jpg`} style={{
                                 height: '400px'
                             }} class="d-block w-100" alt="..." />
                         </div>
                         <div class="carousel-item">
-                            <img src={third} style={{
+                            <img src={process.env.PUBLIC_URL + `/img/slider/slider3.jpg`} style={{
                                 height: '400px'
                             }} class="d-block w-100" alt="..." />
                         </div>

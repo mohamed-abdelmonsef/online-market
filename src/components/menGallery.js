@@ -1,20 +1,10 @@
-import { detectOverflow } from "@popperjs/core";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Services from "../services/site.services";
 
 import React from "react";
 import Header from "./shared/header";
 import Footer from "./shared/footer";
-import one from './img/home6.webp'
-import two from './img/g1.webp'
-import three from './img/g7.webp'
-import four from './img/g3.webp'
-import five from './img/g4.jpg'
-import six from './img/g5.webp'
-import seven from './img/g8.webp'
-import eight from './img/g2.webp'
-import nine from './img/g6.jpg'
-import ten from './img/g9.webp'
+
 
 
 
@@ -34,14 +24,14 @@ export default class MenGallery extends React.Component {
         })
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let cartProds = JSON.parse(localStorage.getItem('cartArr'))
         this.setState({
-            cartProd:cartProds
+            cartProd: cartProds
         })
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         localStorage.setItem('cartArr', JSON.stringify(this.state.cartProd))
     }
 
@@ -65,7 +55,7 @@ export default class MenGallery extends React.Component {
                             <div class="card bg-light mb-3">
                                 <div class="card-header bg-success text-white text-uppercase" >Best Seller</div>
                                 <div class="card-body">
-                                    <img class="img-fluid" src={one} />
+                                    <img class="img-fluid" src={process.env.PUBLIC_URL + `/img/GalleryMen/home6.webp`} />
                                     <h5 class="card-title">Vintage Gender-Neutral Jogger Sweat Pants for Adults</h5>
                                     <p class="card-text">Elasticized rib-knit waistband, with adjustable drawstring.</p>
                                     <p class="bloc_left_price">50.00 $</p>
@@ -80,9 +70,9 @@ export default class MenGallery extends React.Component {
 
                                         <div class="col-12 col-md-6 col-lg-4 mb-3 " key={index}>
                                             <div class="card">
-                                                <img class="card-img-top " src={two} alt="Card image cap" />
+                                                <img class="card-img-top " src={process.env.PUBLIC_URL + `/img/men/${prod.imgName}.webp`} alt="Card image cap" />
                                                 <div class="card-body">
-                                                    <h4 class="card-title"><Link to={{pathname:'/product',product:prod}}>{prod.title}</Link></h4>
+                                                    <h4 class="card-title"><Link to={{ pathname: '/product', product: prod }}>{prod.title}</Link></h4>
                                                     <p class="card-text">{prod.desc}</p>
                                                     <div class="row">
                                                         <div class="col">

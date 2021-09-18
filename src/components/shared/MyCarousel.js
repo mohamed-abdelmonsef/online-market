@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import ReactCardCarousel from "react-card-carousel";
-import first from "../img/home7.webp"
-import sec from "../img/home1.webp"
-import one from "../img/home3.webp"
-import two from "../img/home8.webp"
-import three from "../img/kid1.webp"
+
 
 import { Link } from 'react-router-dom'
 class MyCarousel extends Component {
@@ -43,7 +38,7 @@ class MyCarousel extends Component {
         <div style={MyCarousel.CONTAINER_STYLE}>
           <ReactCardCarousel autoplay={true} autoplay_speed={3000}>
             <div style={MyCarousel.CARD_STYLE}>
-              <img src={two} className="ss" />
+              <img src={process.env.PUBLIC_URL + `/img/Home/home8.webp`} className="ss" />
               <div className="cc"><p>Fashion means something that is trendy or valued in
                 a certain time period. The prevailing fashion/
                 trends/style is called ‘vogue’.
@@ -55,7 +50,7 @@ class MyCarousel extends Component {
             </div>
             {/*  */}
             <div style={MyCarousel.CARD_STYLE}>
-              <img src={one} className="ss" />
+              <img src={process.env.PUBLIC_URL + `/img/Home/home3.webp`} className="ss" />
               <div className="cc"><p>Fashion means something that is trendy or valued in
                 a certain time period. The prevailing fashion/
                 trends/style is called ‘vogue’.
@@ -68,7 +63,7 @@ class MyCarousel extends Component {
             </div>
             {/*  */}
             <div style={MyCarousel.CARD_STYLE}>
-              <img src={three} className="ss" />
+              <img src={process.env.PUBLIC_URL + `/img/Home/kid1.webp`} className="ss" />
               <div className="cc"><p>Fashion means something that is trendy or valued in
                 a certain time period. The prevailing fashion/
                 trends/style is called ‘vogue’.
@@ -89,8 +84,7 @@ class MyCarousel extends Component {
   }
 }
 
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<MyCarousel />, rootElement);
+
 
 export default MyCarousel;
 
