@@ -91,6 +91,11 @@ export default class Header extends React.Component {
                                     <Link to="/aboutus">About Us
                                     </Link>
                                 </li>
+                                <hr></hr>
+                                <li className=" mt-2 mb-2">
+                                    <Link to="/admin">Admin
+                                    </Link>
+                                </li>
                             </ul>
                             {isLogged
                                 ? <Link to="/Login">

@@ -77,7 +77,7 @@ export default class Login extends React.Component {
                 }
             })
         } else {
-            alert("Form has errors.");
+            //alert("Form has errors.");
             //console.log(this.state.errors);
         }
     }

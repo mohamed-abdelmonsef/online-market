@@ -14,12 +14,13 @@ import Admin from "./components/admin";
 function App() {
   return (
     <Router>
-      <Route path='/' component={Home} exact ignoreScrollBehavior />
-      <Route path='/register' component={Register} exact ignoreScrollBehavior />
-      <Route path='/Login' component={Login} exact ignoreScrollBehavior />
-      <Route path='/cart' component={Cart} exact ignoreScrollBehavior />
-      <Route path='/product' component={Product} exact ignoreScrollBehavior />
-      <Route path='/contact' component={Contact} exact ignoreScrollBehavior />
+      <Route path='/' component={Home} exact />
+      <Route path='/home' component={Home} exact />
+      <Route path='/register' component={Register} exact />
+      <Route path='/Login' component={Login} exact />
+      <Route path='/cart' component={Cart} exact />
+      <Route path='/product' component={Product} exact />
+      <Route path='/contact' component={Contact} exact />
       <Route path='/aboutUs' component={AboutUs} exact />
       <Route path='/gallery' component={MenGallery} exact />
       <Route path='/gallery/men' component={MenGallery} exact />

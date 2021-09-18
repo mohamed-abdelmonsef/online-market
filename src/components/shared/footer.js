@@ -43,7 +43,7 @@ export default class Footer extends React.Component {
                         <div className="row mt-5 mb-4">
 
                             <div className="col fw-bold">
-                                Company name
+                                Brilliant
                             </div>
                             <div className="col fw-bold" >
                                 Products

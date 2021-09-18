@@ -105,7 +105,7 @@ export default class Register extends React.Component {
 
 
         } else {
-            alert("Form has errors.");
+            //alert("Form has errors.");
             //console.log(this.state.errors);
         }
     }
