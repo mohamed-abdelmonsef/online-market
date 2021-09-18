@@ -34,6 +34,16 @@ export default class MenGallery extends React.Component {
         })
     }
 
+    componentDidMount(){
+        let cartProds = JSON.parse(localStorage.getItem('cartArr'))
+        this.setState({
+            cartProd:cartProds
+        })
+    }
+
+    componentWillUnmount(){
+        localStorage.setItem('cartArr', JSON.stringify(this.state.cartProd))
+    }
 
     render() {
         return (
@@ -72,12 +82,7 @@ export default class MenGallery extends React.Component {
                                             <div class="card">
                                                 <img class="card-img-top " src={two} alt="Card image cap" />
                                                 <div class="card-body">
-                                                    <h4 class="card-title"><Link onClick={() => {
-                                                        localStorage.setItem(`Product0`, JSON.stringify(prod));
-                                                        // localStorage.setItem(`ProductDesc`, prod.desc);
-                                                        // localStorage.setItem(`ProductPrice`, prod.price)
-
-                                                    }} to="/product" title="View Product">{prod.title}</Link></h4>
+                                                    <h4 class="card-title"><Link to={{pathname:'/product',product:prod}}>{prod.title}</Link></h4>
                                                     <p class="card-text">{prod.desc}</p>
                                                     <div class="row">
                                                         <div class="col">
@@ -86,8 +91,6 @@ export default class MenGallery extends React.Component {
                                                         <div class="col">
                                                             <a href="#" onClick={() => {
                                                                 this.state.cartProd.push(prod)
-                                                                console.log(this.state.cartProd);
-                                                                localStorage.setItem('cartArr', JSON.stringify(this.state.cartProd))
                                                             }} class="btn btn-block" style={{ backgroundColor: '#002244', color: 'white' }}>Add to cart</a>
                                                         </div>
                                                     </div>

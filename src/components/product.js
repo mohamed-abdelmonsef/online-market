@@ -8,10 +8,27 @@ import Header from "./shared/header";
 
 
 export default class Product extends React.Component {
+    state = {
+        cartProd: [],
+        prod: this.props.location.product,
+        prodTitle: this.props.location.product.title,
+        prodDesc: this.props.location.product.desc,
+        prodPrice: this.props.location.product.price
 
+    }
+
+    componentDidMount() {
+        let cartProds = JSON.parse(localStorage.getItem('cartArr'))
+        this.setState({
+            cartProd: cartProds
+        })
+    }
+
+    componentWillUnmount() {
+        localStorage.setItem('cartArr', JSON.stringify(this.state.cartProd))
+    }
 
     render() {
-        console.log(localStorage.getItem('Product0'));
         return (
             <section className="productDetails">
                 <Header />
@@ -25,8 +42,8 @@ export default class Product extends React.Component {
                             </li> */}
                         </div>
                         <div className=" col-xs-12 col-lg-5">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner mb-3">
+                            <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+                                <div class="carousel-inner mb-4">
                                     <div class="carousel-item active">
                                         <img src={firstd} class="d-block w-100" alt="..." />
                                     </div>
@@ -49,7 +66,7 @@ export default class Product extends React.Component {
                         </div>
 
                         <div className="col-xs-12 col-lg-5">
-                            <h5>{JSON.parse(localStorage.getItem('Product0')).title}</h5>
+                            <h5>{this.state.prodTitle}</h5>
                             <p class="mb-2 text-muted text-uppercase small">Shirts</p>
                             <ul class="rating">
                                 <li>
@@ -60,8 +77,8 @@ export default class Product extends React.Component {
                                     <i class="fa fa-star fa-sm text-primary"></i>
                                 </li>
                             </ul>
-                            <p><span class="mr-1"><strong>{JSON.parse(localStorage.getItem('Product0')).price}</strong></span></p>
-                            <p class="pt-1">{JSON.parse(localStorage.getItem('Product0')).desc}</p>
+                            <p><span class="mr-1"><strong>{this.state.prodPrice}</strong></span></p>
+                            <p class="pt-1">{this.state.prodDesc}</p>
 
                             <div class="table-responsive mb-4">
                                 <table class="table table-sm table-borderless mb-0">
@@ -122,7 +139,9 @@ export default class Product extends React.Component {
 
                                 <button type="button" id="buynow" class="btn btn-primary ms-1 mb-2">Buy now</button>
                             </Link>
-                            <button type="button" class="btn btn-secondary ms-1 mb-2"><i
+                            <button onClick={() => {
+                                this.state.cartProd.push(this.state.prod)
+                            }} type="button" class="btn btn-secondary ms-1 mb-2"><i
                                 class="fa fa-shopping-cart me-1 text-secondary"></i>Add to cart</button>
                         </div>
 

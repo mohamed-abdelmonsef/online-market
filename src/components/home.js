@@ -18,6 +18,15 @@ import { FaRoad } from "react-icons/fa";
 export default class Home extends React.Component {
 
 
+    componentDidMount(){
+        let cartProds = JSON.parse(localStorage.getItem('cartArr'))
+        if (cartProds &&cartProds !== null ) {
+            console.log('already got cart');
+        } else {
+            localStorage.setItem('cartArr', JSON.stringify([]))
+        }
+    }
+
     render() {
         return (
             <div>
