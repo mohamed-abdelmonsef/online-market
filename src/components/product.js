@@ -14,6 +14,8 @@ export default class Product extends React.Component {
         prodTitle: this.props.location.product.title,
         prodDesc: this.props.location.product.desc,
         prodPrice: this.props.location.product.price,
+        prodType:this.props.location.product.prodType,
+        imgName:this.props.location.product.imgName,
         logged: false,
         isBought: false
 
@@ -37,6 +39,7 @@ export default class Product extends React.Component {
     }
 
     render() {
+        const{imgName,prodType} = this.state
         return (
             <section className="productDetails">
                 <Header />
@@ -58,7 +61,7 @@ export default class Product extends React.Component {
                             <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
                                 <div class="carousel-inner mb-4">
                                     <div class="carousel-item active">
-                                        <img src={process.env.PUBLIC_URL + `/img/Product/d1.jpg`} class="d-block w-100" alt="..." />
+                                        <img src={process.env.PUBLIC_URL + `/img/${prodType}/${imgName}.webp`} class="d-block w-100" alt="..." />
                                     </div>
                                     {/* <div class="carousel-item">
                                         <img src={process.env.PUBLIC_URL + `/img/Product/d2.jpg`} class="d-block w-100" alt="..." />

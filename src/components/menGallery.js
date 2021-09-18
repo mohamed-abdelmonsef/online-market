@@ -55,7 +55,7 @@ export default class MenGallery extends React.Component {
                             <div class="card bg-light mb-3">
                                 <div class="card-header bg-success text-white text-uppercase" >Best Seller</div>
                                 <div class="card-body">
-                                    <img class="img-fluid" src={process.env.PUBLIC_URL + `/img/GalleryMen/home6.webp`} />
+                                    <img class="img-fluid" src={process.env.PUBLIC_URL + `/img/men/home6.webp`} />
                                     <h5 class="card-title">Vintage Gender-Neutral Jogger Sweat Pants for Adults</h5>
                                     <p class="card-text">Elasticized rib-knit waistband, with adjustable drawstring.</p>
                                     <p class="bloc_left_price">50.00 $</p>

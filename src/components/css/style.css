@@ -25,6 +25,15 @@
   font-weight: bold;
   font-size: 40px;
   font-style: oblique;
+  position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+}
+
+.mymenu{
+  color: #EAEAE1;
+  transform: scale(1.9);
 }
 .navbar-light .navbar-brand:hover{
    padding: 7px;
@@ -633,6 +642,9 @@ margin-right: 10px;
  
 }
 
+* a{
+  text-decoration: none !important;
+}
 
 
 

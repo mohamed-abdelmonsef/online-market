@@ -6,13 +6,10 @@ import './css/style.css';
 
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
-// import * as Scroll from 'react-scroll';
-// import { Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 export default class Cart extends React.Component {
-    // componentDidMount() {
-    //     Scroll.animateScroll.scrollToBottom();
-    // }
+
     state = {
         cartArr: [],
         logged: false,
@@ -35,7 +32,6 @@ export default class Cart extends React.Component {
     render() {
 
         let isLogged = this.state.logged
-        // if (this.state.cartArr.length !== 0) {
         return (
             <>
                 <Header />
@@ -82,7 +78,7 @@ export default class Cart extends React.Component {
 
 
                                                 <div class="product-item">
-                                                    <img className="myimg" src={process.env.PUBLIC_URL + `/img/Cart/cart3.webp`} alt="Product" />&nbsp; &nbsp;
+                                                    <img className="myimg" src={process.env.PUBLIC_URL + `/img/${prod.prodType}/${prod.imgName}.webp`} alt="Product" />&nbsp; &nbsp;
                                                     <div class="product-info">
                                                         <h4 class="product-title">{prod.title}</h4>
                                                         <span>{prod.desc}.</span>

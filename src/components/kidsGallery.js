@@ -54,7 +54,7 @@ export default class KidsGallery extends React.Component {
                             <div class="card bg-light mb-3">
                                 <div class="card-header bg-success text-white text-uppercase" >Best Seller</div>
                                 <div class="card-body">
-                                    <img class="img-fluid" src={process.env.PUBLIC_URL + `/img/Kids/k11.webp`} />
+                                    <img class="img-fluid" src={process.env.PUBLIC_URL + `/img/kids/k11.webp`} />
                                     <h5 class="card-title">Gender-Neutral Matching</h5>
                                     <p class="card-text">Glow-In-The-Dark Hanukkah Snug-Fit Pajamas For Kids 30% off hurry </p>
                                     <p class="bloc_left_price">45.00 $</p>

@@ -52,7 +52,7 @@ export default class WomenGallery extends React.Component {
                             <div class="card bg-light mb-3">
                                 <div class="card-header bg-success text-white text-uppercase" >Best Seller</div>
                                 <div class="card-body">
-                                    <img class="img-fluid" src={process.env.PUBLIC_URL + `/img/GalleryWomen/home4.webp`} />
+                                    <img class="img-fluid" src={process.env.PUBLIC_URL + `/img/women/home4.webp`} />
                                     <h5 class="card-title">Gender-Neutral T-shirt for Adults</h5>
                                     <p class="card-text">This licensed graphic t-shirt is totally classic & gender neutral, too. Wearable & shareable for you, for him, for her, for them!.</p>
                                     <p class="bloc_left_price">40.00 $</p>
