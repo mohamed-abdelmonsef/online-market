@@ -4,29 +4,29 @@ import { BiCart } from "react-icons/bi"
 import { FaGem } from "react-icons/fa"
 
 export default class Header extends React.Component {
-    state={
-        session:null,
-        logged:false
+    state = {
+        session: null,
+        logged: false
     }
 
-    componentWillMount(){
+    componentWillMount() {
         let userSession = JSON.parse(localStorage.getItem('userSession'))
         if (userSession) {
             this.setState({
-                session:userSession,
-                logged:true
+                session: userSession,
+                logged: true
             })
         }
     }
 
 
-    removeSession = ()=>{
+    removeSession = () => {
         localStorage.removeItem('userSession')
     }
 
 
     render() {
-        const isLogged =this.state.logged;
+        const isLogged = this.state.logged;
         return (
             <section>
                 <div>
@@ -47,14 +47,14 @@ export default class Header extends React.Component {
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                    {isLogged
-                                    ?   <Link to="/Login" >
-                                            <button class="btn btn-secondary " onClick={this.removeSession} >Log Out</button>
-                                        </Link>
-                                    :   <Link to="/Login">
-                                            <button class="btn btn-secondary ">Sign In</button>
-                                        </Link> 
-                                    }&nbsp;
+                                        {isLogged
+                                            ? <Link to="/Login" >
+                                                <button class="btn btn-secondary " onClick={this.removeSession} >Log Out</button>
+                                            </Link>
+                                            : <Link to="/Login">
+                                                <button class="btn btn-secondary ">Sign In</button>
+                                            </Link>
+                                        }&nbsp;
                                         <Link to="/cart">
                                             <button class="btn btn-secondary "><i>Cart </i><BiCart /></button>
 
@@ -91,10 +91,10 @@ export default class Header extends React.Component {
                                 </li>
                             </ul>
                             {isLogged
-                                ?<Link to="/Login">
+                                ? <Link to="/Login">
                                     <button className="btn btn-warning btn-lg rounded-pill mt-4 " onClick={this.removeSession}>Log Out</button>
                                 </Link>
-                                :<Link to="/Login">
+                                : <Link to="/Login">
                                     <button className="btn btn-warning btn-lg rounded-pill mt-4 ">Sign in</button>
                                 </Link>
                             }

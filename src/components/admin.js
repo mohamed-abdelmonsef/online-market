@@ -1,9 +1,36 @@
 import React from "react";
 import Header from "./shared/header";
 import Footer from "./shared/footer";
+import Services from "../services/site.services";
 
 export default class Admin extends React.Component{
+
+    state={
+        prodType:'',
+        prodTitle:'',
+        prodDesc:'',
+        prodPrice:'',
+        imgName:''
+    }
+
+    addingProduct = ()=>{
+        let newProd = {
+            prodType:this.state.prodType,
+            title:this.state.prodTitle,
+            desc:this.state.prodDesc,
+            price:this.state.prodPrice,
+            imgName:this.state.imgName
+        }
+        Services.addProduct(newProd).then((res)=>{
+            alert(res.data.message)
+        })
+        console.log(newProd);
+    }
+
+
      render(){
+        const { prodType,prodTitle,prodDesc,prodPrice,imgName  } = this.state
+
          return(
              <>
              <Header/>
@@ -21,21 +48,41 @@ export default class Admin extends React.Component{
                                 <div class="row register-form">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Product Type*" value="" />
+                                            <input type="text" class="form-control" placeholder="Product Type*" value={prodType} onChange={(e) => {
+                                            this.setState({
+                                                prodType: e.target.value
+                                            })
+                                        }}/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Title *" value="" />
+                                            <input type="text" class="form-control" placeholder="Title *" value={prodTitle} onChange={(e) => {
+                                            this.setState({
+                                                prodTitle: e.target.value
+                                            })
+                                        }}/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Description *" value="" />
+                                            <input type="text" class="form-control" placeholder="Description *" value={prodDesc} onChange={(e) => {
+                                            this.setState({
+                                                prodDesc: e.target.value
+                                            })
+                                        }}/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Price *" value="" />
+                                            <input type="text" class="form-control"  placeholder="Price *" value={prodPrice} onChange={(e) => {
+                                            this.setState({
+                                                prodPrice: e.target.value
+                                            })
+                                        }}/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Image Name *" value="" />
+                                            <input type="text" class="form-control"  placeholder="Image Name *" value={imgName} onChange={(e) => {
+                                            this.setState({
+                                                imgName: e.target.value
+                                            })
+                                        }}/>
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Add"/>
+                                        <input type="submit" onClick={this.addingProduct} class="btnRegister"  value="Add"/>
                                     </div>
                                    
                                 </div>
