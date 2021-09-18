@@ -13,7 +13,9 @@ export default class Product extends React.Component {
         prod: this.props.location.product,
         prodTitle: this.props.location.product.title,
         prodDesc: this.props.location.product.desc,
-        prodPrice: this.props.location.product.price
+        prodPrice: this.props.location.product.price,
+        logged: false,
+        isBought: false
 
     }
 
@@ -22,6 +24,12 @@ export default class Product extends React.Component {
         this.setState({
             cartProd: cartProds
         })
+        let userSession = JSON.parse(localStorage.getItem('userSession'))
+        if (userSession) {
+            this.setState({
+                logged: userSession.logged
+            })
+        }
     }
 
     componentWillUnmount() {
@@ -33,6 +41,11 @@ export default class Product extends React.Component {
             <section className="productDetails">
                 <Header />
                 <div className="container">
+                    {
+                        <div style={this.state.isBought ? {} : { display: 'none' }} className="alert alert-success text-center">
+                            You have completed your purchase
+                        </div>
+                    }
                     <div className="row mb-5">
                         <div className="product">
                             {/* <li class="carousel-indicators bg-dark">
@@ -135,10 +148,25 @@ export default class Product extends React.Component {
                                     </tbody>
                                 </table>
                             </div>
-                            <Link to="/Login">
 
-                                <button type="button" id="buynow" class="btn btn-primary ms-1 mb-2">Buy now</button>
-                            </Link>
+
+
+                            <button onClick={() => {
+                                if (!this.state.logged) {
+                                    return (
+                                        this.props.history.push('/Login')
+                                    )
+                                } else {
+                                    this.setState({
+                                        isBought: true
+                                    })
+                                    this.setState({
+                                        cartArr: []
+                                    })
+                                    localStorage.setItem('cartArr', ['[]'])
+                                }
+                            }} type="button" id="buynow" class="btn btn-primary ms-1 mb-2">Buy now</button>
+
                             <button onClick={() => {
                                 this.state.cartProd.push(this.state.prod)
                             }} type="button" class="btn btn-secondary ms-1 mb-2"><i
