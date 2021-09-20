@@ -101,6 +101,7 @@ export default class Register extends React.Component {
                     DbCheck: res.data.message,
                     Flag: true
                 })
+                this.props.history.push('/login')
             })
 
 
