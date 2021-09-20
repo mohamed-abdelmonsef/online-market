@@ -125,7 +125,7 @@ export default class Register extends React.Component {
                                 }}>
                                     <div className="mt-3 mb-3">
                                         {
-                                            <div style={this.state.Flag ? {} : { display: 'none' }} className="alert alert-danger">
+                                            <div style={this.state.Flag ? {} : { display: 'none' }} className="alert alert-success">
                                                 {DbCheck}
                                             </div>
                                         }
